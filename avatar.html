@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>LA LEYENDA DE AANG: AVATAR</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div id="fondo-animado"></div>
+
+    <div id="logo-principal">
+        <img src="./resources/titulo.png" alt="Logo principal" id="titulo-principal" />
+    </div>
+
+    <section id="inicio">
+        <!-- Botón para reiniciar el juego -->
+        <button id="boton-jugar">Jugar</button>
+
+        <!-- Botón para las reglas del juego -->
+        <button id="boton-reglas">Reglas del Juego</button>
+    </section>
+
+    <section id="reglas-del-juego" style="display: none;">
+        <h4>📜 REGLAS DEL JUEGO</h4>
+        <div>
+            <strong>🧙‍♂️ Selección de Personajes:</strong>
+            <p>El jugador elige uno de los personajes disponibles.</p>
+            <p>El enemigo es asignado aleatoriamente de entre estos personajes.</p>
+        </div>
+        <div>
+            <strong>⚔️ Ataques:</strong>
+            <p>El jugador elige entre tres ataques: Puño ✊, Patada 🦶, y Barrida 👣.</p>
+            <p>El enemigo elige su ataque aleatoriamente.</p>
+        </div>
+        <div>
+            <strong>📊 Reglas del Combate:</strong>
+            <p>🤝 Empate: Si ambos eligen el mismo ataque.</p>
+            <p>🏆 Victoria del Jugador:</p>
+            <p>✊ Puño vence a 👣 Barrida.</p>
+            <p>🦶 Patada vence a ✊ Puño.</p>
+            <p>👣 Barrida vence a 🦶 Patada.</p>
+            <p>❌ Derrota del Jugador: Cualquier otra combinación.</p>
+        </div>
+        <div>
+            <strong>❤️ Vidas:</strong>
+            <p>Ambos comienzan con 3 vidas ❤️❤️❤️.</p>
+            <p>Perder un combate disminuye una vida.</p>
+        </div>
+        <div>
+            <strong>🏁 Fin del Juego:</strong>
+            <p>🏆 Victoria del Jugador: Enemigo pierde todas sus vidas.</p>
+            <p>💀 Derrota del Jugador: Jugador pierde todas sus vidas.</p>
+            <p>Se deshabilitan los botones de ataque y se muestra un botón para reiniciar el juego.</p>
+        </div>
+        <div>
+            <strong>🔄 Reinicio del Juego:</strong>
+            <p>El jugador puede reiniciar el juego, recargando la página.</p>
+        </div>
+
+        <!-- Botón para volver al menú principal -->
+        <button id="boton-volver-menu">Volver al Menú Principal</button>
+    </section>
+
+    <section id="seleccionar-personaje" style="display: none;">
+        <h2>Elige tu Personaje</h2> <!-- Encabezado de segundo nivel para la selección de personajes -->
+        <div class="radio-buttons-container">
+            <!-- Aquí se generarán los botones de los personajes -->
+        </div>
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+
+    <!-- Sección para la selección de ataques -->
+    <section id="seleccionar-ataque" style="display: none;">
+        <h2>Elige tu ataque</h2> <!-- Encabezado de segundo nivel para la sección de selección de ataques -->
+
+        <!-- Información del personaje seleccionado por el jugador y sus vidas -->
+        <p>Tu personaje <span id="personaje-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+
+        <!-- Información del personaje enemigo y sus vidas -->
+        <p>El personaje enemigo <span id="personaje-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas</p>
+
+        <!-- Botones para seleccionar los diferentes tipos de ataque -->
+        <p>
+            <button id="boton-punio">Puño ✊</button>
+            <button id="boton-patada">Patada 🦶</button>
+            <button id="boton-barrida">Barrida 👣</button>
+        </p>
+    </section>
+
+    <!-- Sección para mostrar mensajes dinámicos durante el juego -->
+    <section id="mensajes">
+    </section>
+
+    <!-- Sección para reiniciar el juego -->
+    <section id="reiniciar" style="display: none;">
+        <!-- Botón para reiniciar el juego -->
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
+
+</body>
+<script src="./js/avatar.js" defer></script>
+</html>

@@ -1,0 +1,197 @@
+/* Estilos generales */
+body {
+  background: linear-gradient(45deg, #000000, #363636);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+/* Estilo del logo */
+#titulo-principal {
+  display: block;
+  margin: 0 auto;
+  width: 50%; /* Tamaño del logo para pantallas grandes */
+}
+
+/* Ocultar elemento */
+.oculto {
+  display: none;
+}
+
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Encabezados */
+h1, h2, h4 {
+  margin: 20px 0;
+  color: #e0e0e0;
+  max-width: 100%;
+}
+
+/* Secciones */
+section {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+/* Estilos generales para todos los botones */
+button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgba(255, 255, 255, 0.466) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 30px;
+  transition: all 0.5s ease;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(0, 0, 0) 0px 7px 29px 0px;
+}
+
+button:active {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(255, 255, 255, 0.486) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+/* Estilo mejorado para radio buttons como imágenes */
+.radio-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Permitir que los botones se ajusten a varias líneas */
+  gap: 24px;
+  margin: 20px auto;
+}
+
+.radio-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.radio-button__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button__label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.radio-button__custom {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 10px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #ffffff8a);
+}
+
+.radio-button__label:hover .radio-button__custom {
+  transform: scale(1.1);
+  border-color: #ffffff;
+  filter: drop-shadow(0 0 10px #ffffff8a);
+}
+
+/* Sección de mensajes */
+#mensajes p {
+  color: #ff5722;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Inputs de selección de personajes */
+input[type="radio"] {
+  margin: 0 10px;
+}
+
+label {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* Responsividad para pantallas medianas y móviles */
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size: 28px;
+  }
+
+  h2, h4 {
+      font-size: 24px;
+  }
+
+  button {
+      font-size: 22px;
+      padding: 12px 24px;
+  }
+
+  #titulo-principal {
+      width: 70%;
+  }
+
+  #inicio, #seleccionar-ataque {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #boton-jugar, #boton-reglas {
+      margin: 15px 0;
+      width: 90%;
+  }
+
+  .radio-button__custom {
+      width: 100px; /* Ajustar tamaño de las imágenes en pantallas pequeñas */
+      height: 100px;
+  }
+}
